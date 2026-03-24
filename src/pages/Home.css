@@ -1,0 +1,132 @@
+.home {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Commute Setup Card ── */
+.commute-setup {
+  background: rgba(15, 15, 15, 0.88);
+  border-radius: 10px;
+  border: 2px solid rgba(0, 200, 255, 0.25);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.setup-error {
+  text-align: center;
+  color: #ff5f5f;
+  font-size: 0.88rem;
+  padding: 0.25rem 0;
+}
+
+/* ── Setup Panel (upper) ── */
+.setup-panel {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.location-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.setup-actions {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+}
+
+.action-btn {
+  flex: 1;
+  border-radius: 8px;
+  border: 2px solid rgba(0, 200, 255, 0.5);
+  background: rgba(0, 200, 255, 0.18);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #00c8ff;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.action-btn:hover:not(:disabled) {
+  background: rgba(0, 200, 255, 0.28);
+  border-color: rgba(0, 200, 255, 0.75);
+}
+
+.action-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.setup-section {
+  background-color: rgba(22, 22, 22, 0.95);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1.25rem;
+  min-height: 160px;
+}
+
+.setup-section h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #00c8ff;
+  letter-spacing: 0.03em;
+}
+
+/* ── Weather Panel ── */
+.weather-panel {
+  background-color: rgba(15, 15, 15, 0.88);
+  border-radius: 8px;
+  border: 2px solid rgba(0, 200, 255, 0.25);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  padding: 1.25rem;
+  min-height: 280px;
+}
+
+.weather-panel h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #00c8ff;
+  letter-spacing: 0.03em;
+}
+
+.weather-cards {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+}
+
+.weather-cards--centered {
+  justify-content: center;
+}
+
+/* Keep cards the same width as a 5-card layout when fewer are shown */
+.weather-cards--centered .weather-card {
+  flex: 0 0 calc((100% - 4 * 0.75rem) / 5);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .setup-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .setup-actions {
+    min-height: 80px;
+  }
+
+  .weather-cards {
+    flex-direction: column;
+  }
+}

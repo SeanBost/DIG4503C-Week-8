@@ -1,0 +1,74 @@
+.schedule-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.schedule-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.schedule-row--off .time-fields {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.schedule-row--off .day-label {
+  color: #445566;
+}
+
+.day-label {
+  width: 2.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #e8e8e8;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.time-fields {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.time-field {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.time-field label {
+  font-size: 0.8rem;
+  color: #5a7a8a;
+  flex-shrink: 0;
+}
+
+.time-field select {
+  font-size: 0.85rem;
+  padding: 0.2rem 0.35rem;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 200, 255, 0.2);
+  background: #111;
+  color: #e8e8e8;
+  cursor: pointer;
+}
+
+.time-field select:focus {
+  outline: none;
+  border-color: rgba(0, 200, 255, 0.5);
+}
+
+/* On narrow screens, let time fields wrap under the day label */
+@media (max-width: 480px) {
+  .schedule-row {
+    flex-wrap: wrap;
+  }
+
+  .time-fields {
+    flex: 1 1 100%;
+    padding-left: 1.75rem; /* indent under checkbox + label */
+  }
+}
